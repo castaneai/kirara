@@ -9,7 +9,7 @@ type Tag string
 
 type Post struct {
 	PostID int
-	ImageURL url.URL
+	ImageURLs []url.URL
 	ThumbnailImageURL url.URL
 	Tags []Tag
 	CreatedAt time.Time
