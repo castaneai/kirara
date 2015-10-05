@@ -8,7 +8,7 @@ import (
 type Tag string
 
 type Post struct {
-	PostID int
+	PostID string
 	ImageURLs []url.URL
 	ThumbnailImageURL url.URL
 	Tags []Tag
