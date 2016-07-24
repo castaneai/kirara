@@ -1,8 +1,8 @@
-package kirara
+package resource
 
 import (
-	"github.com/franela/goreq"
 	"fmt"
+	"github.com/franela/goreq"
 )
 
 type Tiqav struct {}
@@ -19,6 +19,8 @@ type searchResponseData struct {
 	Id string
 	Ext string
 	SourceUrl string
+	Width int
+	Height int
 }
 
 func getPostTags(postID string) ([]Tag, error) {
@@ -47,7 +49,7 @@ func (t *Tiqav) SearchByKeyword(keyword string, pageNumber int) ([]Post, error) 
 		}
 		posts = append(posts, Post {
 			PostID: d.Id,
-			ImageURLs: []string {fmt.Sprintf("http://img.tiqav.com/%s.%s", d.Id, d.Ext)},
+			Images: []Image { {ImageID: d.Id, URL: fmt.Sprintf("http://img.tiqav.com/%s.%s", d.Id, d.Ext), Width: d.Width, Height: d.Height} },
 			ThumbnailImageURL: fmt.Sprintf("http://img.tiqav.com/%s.th.jpg", d.Id),
 			Tags: tags,
 		})

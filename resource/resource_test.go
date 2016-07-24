@@ -1,4 +1,4 @@
-package kirara
+package resource
 
 import (
 	"testing"

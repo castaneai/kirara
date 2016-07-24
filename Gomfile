@@ -1,1 +1,2 @@
 gom 'github.com/franela/goreq'
+gom 'github.com/labstack/echo'
